@@ -97,4 +97,9 @@ class User extends Authenticatable implements HasTenants
     {
         return $this->morphMany(Address::class, 'addressable');
     }
+
+    public function tickets()
+    {
+        return $this->hasMany(Ticket::class);
+    }
 }

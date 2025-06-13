@@ -20,6 +20,13 @@ class RouteServiceProvider extends ServiceProvider
     public const HOME = '/dashboard';
 
     /**
+     * The path to your application's admin "home" route.
+     *
+     * @var string
+     */
+    public const ADMIN_HOME = '/admin/dashboard';
+
+    /**
      * Define your route model bindings, pattern filters, and other route configuration.
      */
     public function boot(): void
@@ -35,6 +42,10 @@ class RouteServiceProvider extends ServiceProvider
 
             Route::middleware('web')
                 ->group(base_path('routes/web.php'));
+
+            Route::middleware('web')
+                ->prefix('admin')
+                ->group(base_path('routes/admin.php'));
 
             if (app()->isLocal()) {
                 Route::middleware('web')

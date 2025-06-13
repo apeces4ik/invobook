@@ -1,2 +1,8 @@
-import { Livewire } from '../../vendor/livewire/livewire/dist/livewire.esm';
-Livewire.start();
+import Alpine from 'alpinejs';
+window.Alpine = Alpine;
+Alpine.start();
+
+import 'aos/dist/aos.css';
+import AOS from 'aos';
+
+AOS.init();
